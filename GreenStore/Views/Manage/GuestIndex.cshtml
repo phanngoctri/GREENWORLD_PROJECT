@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Tạo tài khoản";
+}
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="row">
+    <div class="col-md-8">
+
+        <h2>@ViewBag.Title.</h2>
+        @if (Request.IsAuthenticated)
+        {
+
+            <p>
+                Đăng nhập với tư cách Khách
+            </p>
+            <p>
+                Vui lòng đăng xuất và tạo một tài khoản để đặt hàng và hơn nữa.
+            </p>
+
+
+
+
+            using (Html.BeginForm("LogOffAndRegister", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Đăng nhập để nhận các khuyến mãi khác</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">1</span>
+                                Your information will automatically get filled out when you order in the future.
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">2</span>
+                                You will have a more convinent peersonilized experience.
+                            </li>
+                            <li class="list-group-item"><a href="javascript:document.getElementById('logoutForm').submit()">Log off and create your own account.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <ul class="list-group">
+                <li class="list-group-item"><span class="badge">1</span>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li class="list-group-item">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+        }
+    </div>
+</div>
