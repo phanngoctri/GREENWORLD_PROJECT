@@ -21,22 +21,22 @@ namespace GreenStore.Models
         [ScaffoldColumn(false)]
         public int ID { get; set; }
 
-        [DisplayName("Catagorie")]
+        [DisplayName("Loại hàng")]
         public int CatagorieId { get; set; }
 
-        [Required(ErrorMessage = "An Item Name is required")]
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         [StringLength(160)]
         public string Name { get; set; }
 
 
 
-        [Required(ErrorMessage = "Price is required")]
-        [Range(0.01, 999.99,ErrorMessage = "Price must be between 0.01 and 999.99")]
-        public decimal Price { get; set; }
+        [Required(ErrorMessage = "Đơn giá không được để trống")]
+        //[Range(0.01, 999.99,ErrorMessage = "Price must be between 0.01 and 999.99")]
+        public double Price { get; set; }
 
         public byte[] InternalImage { get; set; }
 
-        [Display(Name = "Local file")]
+        [Display(Name = "Chọn tệp")]
         [NotMapped]
         public HttpPostedFileBase File
         {
@@ -65,7 +65,7 @@ namespace GreenStore.Models
             }
         }
 
-        [DisplayName("Item Picture URL")]
+        [DisplayName("URL hình ảnh")]
         [StringLength(1024)]
         public string ItemPictureUrl { get; set; }
 

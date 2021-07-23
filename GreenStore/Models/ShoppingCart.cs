@@ -115,22 +115,22 @@ namespace GreenStore.Models
             return count ?? 0;
         }
 
-        public decimal GetTotal()
+        public double GetTotal()
         {
             // Multiply item price by count of that item to get 
             // the current price for each of those items in the cart
             // sum all item price totals to get the cart total
-            decimal? total = (from cartItems in storeDB.Carts
+            double? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count *
                               cartItems.Item.Price).Sum();
 
-            return total ?? decimal.Zero;
+            return (double)total ;
         }
 
         public Order CreateOrder(Order order)
         {
-            decimal orderTotal = 0;
+            double orderTotal = 0.0;
             order.OrderDetails = new List<OrderDetail>();
 
             var cartItems = GetCartItems();
@@ -142,7 +142,7 @@ namespace GreenStore.Models
                 {
                     ItemId = item.ItemId,
                     OrderId = order.OrderId,
-                    UnitPrice = item.Item.Price,
+                    UnitPrice = (int)item.Item.Price,
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart
@@ -152,7 +152,7 @@ namespace GreenStore.Models
 
             }
             // Set the order's total to the orderTotal count
-            order.Total = orderTotal;
+            order.Total = (int)orderTotal;
 
             // Save the order
             storeDB.SaveChanges();

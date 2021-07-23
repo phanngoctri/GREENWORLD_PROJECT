@@ -8,7 +8,7 @@ namespace GreenStore.Models
     {
         public string Id { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "RoleName")]
+        [Display(Name = "Vai trò")]
         public string Name { get; set; }
     }
 

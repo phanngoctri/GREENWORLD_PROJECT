@@ -43,7 +43,7 @@ namespace GreenStore.Controllers
             
             var order = new Order();
             TryUpdateModel(order);
-            order.CreditCard = result;
+            //order.CreditCard = result;
 
             try
             {
@@ -62,10 +62,10 @@ namespace GreenStore.Controllers
 
                         currentUser.Address = order.Address;
                         currentUser.City = order.City;
-                        currentUser.Country = order.Country;
+                        //currentUser.Country = order.Country;
                         currentUser.State = order.State;
                         currentUser.Phone = order.Phone;
-                        currentUser.PostalCode = order.PostalCode;
+                        //currentUser.PostalCode = order.PostalCode;
                         currentUser.FirstName = order.FirstName;
 
                         //Save this back

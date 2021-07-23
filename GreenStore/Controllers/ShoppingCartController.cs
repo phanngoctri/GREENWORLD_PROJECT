@@ -22,7 +22,7 @@ namespace GreenStore.Controllers
             var viewModel = new ShoppingCartViewModel
             {
                 CartItems = cart.GetCartItems(),
-                CartTotal = cart.GetTotal()
+                CartTotal = (int)cart.GetTotal()
             };
             // Return the view
             return View(viewModel);

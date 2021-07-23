@@ -24,62 +24,62 @@ namespace GreenStore.Models
         [ScaffoldColumn(false)]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "First Name is required")]
-        [DisplayName("First Name")]
+        [Required(ErrorMessage = "Vui lòng nhập họ")]
+        [DisplayName("Họ và tên đệm")]
         [StringLength(160)]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Last Name is required")]
-        [DisplayName("Last Name")]
+        [Required(ErrorMessage = "Vui lòng nhập tên")]
+        [DisplayName("Tên")]
         [StringLength(160)]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Address is required")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
         [StringLength(70)]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "City is required")]
+        [Required(ErrorMessage = "Vui lòng nhập thành phố")]
         [StringLength(40)]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "State is required")]
+        [Required(ErrorMessage = "Vui lòng nhập quận")]
         [StringLength(40)]
         public string State { get; set; }
 
-        [Required(ErrorMessage = "Postal Code is required")]
-        [DisplayName("Postal Code")]
-        [StringLength(10)]
-        public string PostalCode { get; set; }
+        //[Required(ErrorMessage = "Postal Code is required")]
+        //[DisplayName("Postal Code")]
+        //[StringLength(10)]
+        //public string PostalCode { get; set; }
 
-        [Required(ErrorMessage = "Country is required")]
-        [StringLength(40)]
-        public string Country { get; set; }
+        //[Required(ErrorMessage = "Country is required")]
+        //[StringLength(40)]
+        //public string Country { get; set; }
 
-        [Required(ErrorMessage = "Phone is required")]
+        [Required(ErrorMessage = "Vui lòng nhập số điênj thoại")]
         [StringLength(24)]
         public string Phone { get; set; }
 
-        [Display(Name = "Experation Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Experation { get; set; }
+        //[Display(Name = "Experation Date")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //public DateTime Experation { get; set; }
 
-        [Display(Name = "Credit Card")]
-        [NotMapped]
-        [Required]
-        [DataType(DataType.CreditCard)]
-        public String CreditCard { get; set; }
+        //[Display(Name = "Credit Card")]
+        //[NotMapped]
+        //[Required]
+        //[DataType(DataType.CreditCard)]
+        //public String CreditCard { get; set; }
 
-        [Display(Name = "Credit Card Type")]
-        [NotMapped]
-        public String CcType { get; set; }
+        //[Display(Name = "Credit Card Type")]
+        //[NotMapped]
+        //public String CcType { get; set; }
 
         public bool SaveInfo { get; set; }
 
 
         [DisplayName("Email Address")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}",
-            ErrorMessage = "Email is is not valid.")]
+            ErrorMessage = "Email không đúng.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -93,9 +93,9 @@ namespace GreenStore.Models
         {
             StringBuilder bob = new StringBuilder();
 
-            bob.Append("<p>Thông tin đơn hàng: "+ order.OrderId +"<br>Placed at: " + order.OrderDate +"</p>").AppendLine();
+            bob.Append("<p>Thông tin đơn hàng: "+ order.OrderId +"<br>Ngày đặt: " + order.OrderDate +"</p>").AppendLine();
             bob.Append("<p>Họ tên: " + order.FirstName + " " + order.LastName + "<br>");
-            bob.Append("Địa chỉ: " + order.Address + " " + order.City + " " + order.State + " " + order.PostalCode + "<br>");
+            bob.Append("Địa chỉ: " + order.Address + " " + order.City + " " + order.State + " " + "<br>");
             bob.Append("Liên hệ: " + order.Email + "     " + order.Phone + "</p>");
             //bob.Append("<p>Charge: " + order.CreditCard + " " + order.Experation.ToString("dd-MM-yyyy") + "</p>");
             //bob.Append("<p>Credit Card Type: " + order.CcType + "</p>");

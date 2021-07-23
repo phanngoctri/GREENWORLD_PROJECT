@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GreenStore.Models {
@@ -10,7 +10,7 @@ namespace GreenStore.Models {
         public string GuestAcct { get; set; }
 
         [Required]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string GuestPassword { get; set; }
 
     }
@@ -58,7 +58,7 @@ namespace GreenStore.Models {
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -78,8 +78,8 @@ namespace GreenStore.Models {
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Xác nhận mật khẩu")]
+        [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không đúng.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -92,12 +92,12 @@ namespace GreenStore.Models {
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Xác nhận mật khẩu")]
+        [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không đúng.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
