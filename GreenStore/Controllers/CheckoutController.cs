@@ -18,13 +18,13 @@ namespace GreenStore.Controllers
         ApplicationDbContext storeDB = new ApplicationDbContext();
         AppConfigurations appConfig = new AppConfigurations();
 
-        public List<String> CreditCardTypes { get { return appConfig.CreditCardType;} }
+        //public List<String> CreditCardTypes { get { return appConfig.CreditCardType;} }
 
         //
         // GET: /Checkout/AddressAndPayment
         public ActionResult AddressAndPayment()
         {
-            ViewBag.CreditCardTypes = CreditCardTypes;
+            //ViewBag.CreditCardTypes = CreditCardTypes;
             var previousOrder = storeDB.Orders.FirstOrDefault(x => x.Username == User.Identity.Name);
 
             if (previousOrder != null)
@@ -38,7 +38,7 @@ namespace GreenStore.Controllers
         [HttpPost]
         public async Task<ActionResult> AddressAndPayment(FormCollection values)
         {
-            ViewBag.CreditCardTypes = CreditCardTypes;
+            //ViewBag.CreditCardTypes = CreditCardTypes;
             string result =  values[9];
             
             var order = new Order();

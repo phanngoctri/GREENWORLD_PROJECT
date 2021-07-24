@@ -44,7 +44,7 @@
   <div class="well bs-component">
     @using (Html.BeginForm(new { @class = "form-horizontal" }))
     {
-       <h2>Address And Payment</h2>
+       <h2>Địa chỉ và thanh toán</h2>
         <fieldset>
             <legend>Shipping Information</legend>
 
@@ -87,20 +87,20 @@
                     @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.PostalCode, htmlAttributes: new { @class = "col-lg-2 control-label" })
                 <div class="col-lg-10">
                     @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Zip Code" } })
                     @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
                 </div>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "col-lg-2 control-label" })
                 <div class="col-lg-10">
                     @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Country" } })
                     @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <br>
 
@@ -118,22 +118,22 @@
             </div>
 
             <br>
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.CreditCard, htmlAttributes: new { @class = "col-lg-2 control-label" })
                 <div class="col-lg-10">
                     @Html.EditorFor(model => model.CreditCard, new { htmlAttributes = new { @class = "form-control", @placeholder = "Credit Card Number" } })
                     @Html.ValidationMessageFor(model => model.CreditCard, "", new { @class = "text-danger" })
                     <span class="help-block">For security the credit card is not stored in our system.</span>
                 </div>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.Experation, htmlAttributes: new { @class = "col-lg-2 control-label" })
                 <div class="col-lg-10">
                     @Html.EditorFor(model => model.Experation)
                     @Html.ValidationMessageFor(model => model.Experation, "", new { @class = "text-danger" })
                 </div>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label for="select" class="col-lg-2 control-label">Credit Card Type</label>
                 <div class="col-lg-10">
                     <select class="form-control" id="select">
@@ -143,7 +143,7 @@
                         }
                     </select>
                 </div>
-            </div>
+            </div>*@
 
             
             <br>
