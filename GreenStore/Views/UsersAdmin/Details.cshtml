@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details.</h2>
+<h2>Chi tiết người dùng</h2>
 
 <div>
-    <h4>User</h4>
+    <h4>Người dùng</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -18,11 +18,11 @@
         </dd>
     </dl>
 </div>
-<h4>List of roles for this user</h4>
+<h4>Danh sách vai trò trang</h4>
 @if (ViewBag.RoleNames.Count == 0)
 {
     <hr />
-    <p>No roles found for this user.</p>
+    <p>Tài khoản không có quyền</p>
 }
 
 <table class="table">

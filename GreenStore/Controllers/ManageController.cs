@@ -43,12 +43,12 @@ namespace GreenStore.Controllers
                 return RedirectToAction("GuestIndex");
 
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Mật khẩu của bạn đã được đổi"
+                : message == ManageMessageId.SetPasswordSuccess ? "Mật khẩu của bạn đã được đặt"
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two factor provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "The phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                : message == ManageMessageId.Error ? "Lỗi."
+                : message == ManageMessageId.AddPhoneSuccess ? "Đã thêm số điện thoại"
+                : message == ManageMessageId.RemovePhoneSuccess ? "Đã xóa số điện thoại"
                 : "";
 
             var model = new IndexViewModel

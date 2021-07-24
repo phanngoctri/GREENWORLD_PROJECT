@@ -36,14 +36,17 @@ namespace GreenStore.Models
 
         [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
         [StringLength(70)]
+        [DisplayName("Địa chỉ")]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập thành phố")]
         [StringLength(40)]
+        [DisplayName("Thành phố")]
         public string City { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập quận")]
         [StringLength(40)]
+        [DisplayName("Quận")]
         public string State { get; set; }
 
         //[Required(ErrorMessage = "Postal Code is required")]
@@ -73,11 +76,11 @@ namespace GreenStore.Models
         //[Display(Name = "Credit Card Type")]
         //[NotMapped]
         //public String CcType { get; set; }
-
+        [DisplayName("Lưu thông tin")]
         public bool SaveInfo { get; set; }
 
 
-        [DisplayName("Email Address")]
+        [DisplayName("Địa chỉ Email")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}",
             ErrorMessage = "Email không đúng.")]
         [DataType(DataType.EmailAddress)]
