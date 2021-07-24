@@ -100,14 +100,13 @@
 <p>
     <a href="#" class="AddLink"
        data-id="@Model.ID" data-toggle="modal" data-target="#myModal">
-        Add
-        to cart
+        Thêm vào giỏ
     </a>
     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+<a>|</a> @Html.ActionLink("Sửa", "Edit", new { id = Model.ID }) <a>|</a>
         
     }
      
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay lại", "Index")
 </p>

@@ -59,7 +59,7 @@
 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
 {
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Thêm mới", "Create")
     </p>
 }
 <div class="bs-docs-section">
@@ -114,15 +114,14 @@
             <td>
                 <a href="#" class="AddLink"
                    data-id="@item.ID" data-toggle="modal" data-target="#myModal">
-                    Add
-                    to cart
+                    Thêm vào giỏ
                 </a>
                 <!--@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.ID }, new { htmlAttributes = new { @data_toggle = "modal", @data_target = "#myModal" } })--> |
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.ID })
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    <a>|</a> @Html.ActionLink("Sửa", "Edit", new { id = item.ID })
+                    <a>|</a> @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
                 }
             </td>
         </tr>
