@@ -1,6 +1,6 @@
 ﻿@model GreenStore.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage your account";
+    ViewBag.Title = "Quản lý tài khoản";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -16,7 +16,7 @@
             }
         </p>
         <p>
-            Phone Number: @(Model.PhoneNumber ?? "None") [
+            Số điện thoại: @(Model.PhoneNumber ?? "Chưa có") [
             @if (Model.PhoneNumber != null) {
                 @Html.ActionLink("Thay đổi", "AddPhoneNumber")
                 @: &nbsp;|&nbsp;
@@ -27,11 +27,11 @@
             }
             ]
         </p>
-        <p>
+        @*<p>
             External Logins: @Model.Logins.Count
             @Html.ActionLink("[Manage]", "ManageLogins")
-        </p>
-        <p>
+        </p>*@
+        @*<p>
             Two Factor Enabled: @(Model.TwoFactor)
             @if (Model.TwoFactor) {
                 @Html.ActionLink("[Disable]", "DisableTFA")
@@ -39,8 +39,8 @@
             else {
                 @Html.ActionLink("[Enable]", "EnableTFA")
             }
-        </p>
-        <p>
+        </p>*@
+        @*<p>
             Two Factor Browser Remembered?: @Model.BrowserRemembered
             @if (Model.BrowserRemembered) {
                 @Html.ActionLink("[Forget]", "ForgetBrowser")
@@ -48,6 +48,6 @@
             else {
                 @Html.ActionLink("[Remember]", "RememberBrowser")
             }
-        </p>
+        </p>*@
     </div>
 </div>

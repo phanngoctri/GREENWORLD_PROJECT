@@ -1,7 +1,7 @@
-@model GreenStore.Models.ManageLoginsViewModel
+﻿@model GreenStore.Models.ManageLoginsViewModel
 @using Microsoft.Owin.Security
 @{
-    ViewBag.Title = "Manage your external logins";
+    ViewBag.Title = "Quản lý tài khảon đăng nhập";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -41,7 +41,7 @@
 }
 @if (Model.OtherLogins.Count > 0)
 {
-    <h4>Add another service to log in.</h4>
+    <h4>Đăng nhập bằng</h4>
     <hr />
     using (Html.BeginForm("LinkLogin", "Manage"))
     {
@@ -50,7 +50,7 @@
         <p>
             @foreach (AuthenticationDescription p in Model.OtherLogins)
             {
-                <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Đăng nhập bằng @p.Caption tài khoản của bạn">@p.AuthenticationType</button>
             }
         </p>
         </div>

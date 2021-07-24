@@ -24,12 +24,13 @@ namespace GreenStore.Models
         [DisplayName("Loại hàng")]
         public int CatagorieId { get; set; }
 
+        [DisplayName("Tên sản phẩm")]
         [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         [StringLength(160)]
         public string Name { get; set; }
 
 
-
+        [DisplayName("Đơn giá")]
         [Required(ErrorMessage = "Đơn giá không được để trống")]
         //[Range(0.01, 999.99,ErrorMessage = "Price must be between 0.01 and 999.99")]
         public double Price { get; set; }

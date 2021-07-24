@@ -39,7 +39,7 @@ namespace GreenStore.Controllers
         public async Task<ActionResult> AddressAndPayment(FormCollection values)
         {
             //ViewBag.CreditCardTypes = CreditCardTypes;
-            string result =  values[9];
+           // string result =  values[9];
             
             var order = new Order();
             TryUpdateModel(order);

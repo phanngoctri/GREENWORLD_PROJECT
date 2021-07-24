@@ -125,7 +125,7 @@ namespace GreenStore.Models
                               select (int?)cartItems.Count *
                               cartItems.Item.Price).Sum();
 
-            return (double)total ;
+            return (double)((int?)total) ;
         }
 
         public Order CreateOrder(Order order)

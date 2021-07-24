@@ -44,8 +44,8 @@ namespace GreenStore.Controllers
             // Display the confirmation message
             var results = new ShoppingCartRemoveViewModel
             {
-                Message = Server.HtmlEncode(addedItem.Name) +
-                    " has been added to your shopping cart.",
+                Message =
+                    "Đã thêm " + Server.HtmlEncode(addedItem.Name) + "vào giỏ hàng",
                 CartTotal = cart.GetTotal(),
                 CartCount = cart.GetCount(),
                 ItemCount = count,
@@ -76,8 +76,8 @@ namespace GreenStore.Controllers
             // Display the confirmation message
             var results = new ShoppingCartRemoveViewModel
             {
-                Message = "One (1) "+ Server.HtmlEncode(itemName) +
-                    " has been removed from your shopping cart.",
+                Message = Server.HtmlEncode(itemName) +
+                    " đã được xóa khỏi giỏ hàng.",
                 CartTotal = cart.GetTotal(),
                 CartCount = cart.GetCount(),
                 ItemCount = itemCount,

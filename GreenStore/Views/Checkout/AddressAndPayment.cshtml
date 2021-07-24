@@ -1,7 +1,7 @@
 ﻿@model GreenStore.Models.Order
 
 @{
-    ViewBag.Title = "Address And Payment";
+    ViewBag.Title = "ĐỊA CHỈ VÀ THANH TOÁN";
 }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -46,7 +46,7 @@
     {
        <h2>Địa chỉ và thanh toán</h2>
         <fieldset>
-            <legend>Shipping Information</legend>
+            <legend>Thônng tin ship</legend>
 
 
             <div class="form-group">
@@ -111,9 +111,9 @@
                     @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                     <div class="checkbox">
                         <label>
-                            @Html.CheckBoxFor(model => model.SaveInfo, new { @type = "checkbox" })Save my Info for next time.
-                        </label>
-                    </div>
+                            @Html.CheckBoxFor(model => model.SaveInfo, new { @type = "checkbox" })Lưu lại thông tin ship
+                            </label>
+</div>
                 </div>
             </div>
 
@@ -145,12 +145,14 @@
                 </div>
             </div>*@
 
-            
+            <div>
+                HÌNH THỨC THANH TOÁN: COD
+            </div>
             <br>
 
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-8">
-                    <button type="submit" class="btn btn-primary">Submit Order &raquo;</button>
+                    <button type="submit" class="btn btn-primary">ĐẶT HÀNG &raquo;</button>
                 </div>
             </div>
         </fieldset>

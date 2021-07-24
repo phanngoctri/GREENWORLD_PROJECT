@@ -1,7 +1,7 @@
 ﻿@model GreenStore.Models.Item
 
 @{
-    ViewBag.Title = "Item - " + Model.Name;
+    ViewBag.Title = "Sản phẩm - " + Model.Name;
 }
 
 <h2>@Model.Name</h2>
@@ -12,15 +12,15 @@
 
 <div id="item-details">
     <p>
-        <em>Genre:</em>
+        <em>Loại hàng:</em>
         @Model.Catagorie.Name
     </p>
     <p>
-        <em>Price:</em>
+        <em>Đơn giá:</em>
         @String.Format("{0:F}", Model.Price)
     </p>
     <p class="button">
-        @Html.ActionLink("Add to cart", "AddToCart",
+        @Html.ActionLink("Thêm vào giỏ hàng", "AddToCart",
         "ShoppingCart", new { id = Model.ID }, "")
     </p>
 </div>

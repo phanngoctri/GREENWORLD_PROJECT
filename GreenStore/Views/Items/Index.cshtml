@@ -31,7 +31,7 @@
 
     <div aria-hidden="true" class="alert alert-dismissable alert-success">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>An item was added to your cart.</strong> To check out now simply <a href="#" class="alert-link">click here</a>.
+        <strong>Đã thêm sản phẩm vào giỏ hàng.</strong> Để thanh toán vui lòng <a href="#" class="alert-link">click vào đây</a>.
     </div>
 
     <div class="modal-dialog">
@@ -45,8 +45,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default"  data-dismiss="modal">Continue</button>
-                <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ShoppingCart")'">Check Out</button>
+                <button type="button" class="btn btn-default"  data-dismiss="modal">Tìm thêm sản phẩm</button>
+                <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ShoppingCart")'">Tiếp tục thanh toán</button>
             </div>
         </div>
     </div>
@@ -117,12 +117,12 @@
                     Add
                     to cart
                 </a>
-                <!--@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.ID }, new { htmlAttributes = new { @data_toggle = "modal", @data_target = "#myModal" } })--> |
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                <!--@Html.ActionLink("Thêm vào giỏ hàng", "AddToCart", "ShoppingCart", new { id = item.ID }, new { htmlAttributes = new { @data_toggle = "modal", @data_target = "#myModal" } })--> |
+                @Html.ActionLink("Chi tiết sản phẩm", "Details", new { id = item.ID })
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
                 }
             </td>
         </tr>
