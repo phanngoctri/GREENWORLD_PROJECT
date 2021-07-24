@@ -1,7 +1,7 @@
 ﻿@model GreenStore.Models.Item
 
 @{
-    ViewBag.Title = "Chi tiết";
+    ViewBag.Title = "Details";
 }
 
 
@@ -29,7 +29,7 @@
 
     <div aria-hidden="true" class="alert alert-dismissable alert-success">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Đã thêm sản phẩm vào giỏ hàng.</strong> Tìm thêm sản phẩm <a href="#" class="alert-link">Thanh toán</a>.
+        <strong>Đã thêm sản phẩm vào giỏ hàng.</strong> Để thanh tóán vui lòng <a href="#" class="alert-link">click vào đay</a>.
     </div>
 
     <div class="modal-dialog">
@@ -39,12 +39,12 @@
                 <h4 class="modal-title">Xác nhận thanh toán</h4>
             </div>
             <div class="modal-body">
-                <p>Tiếp tục đến giỏ hàng hoặc tìm thêm sản phẩm khác?</p>
+                <p>Bạn có muốn tìm thêm sản phẩm khác?</p>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Tiếp tục</button>
-                <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ShoppingCart")'">Thanh toán</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tìm  thêm sản phẩm khác </button>
+                <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ShoppingCart")'">Tiếp tục thanh toán</button>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
 <h2>Chi tiết sản phẩm</h2>
 
 <div>
-    <h4>Sản phẩm</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <img src="@Url.Action("RenderImage", new { id = Model.ID})" />
@@ -100,13 +100,14 @@
 <p>
     <a href="#" class="AddLink"
        data-id="@Model.ID" data-toggle="modal" data-target="#myModal">
-        Thêm vào giỏ hàng
+        Add
+        to cart
     </a>
     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
     {
-        @Html.ActionLink("Sửa", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
         
     }
      
-    <a>|</a> @Html.ActionLink("Quay lại danh sách sản phẩm", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </p>

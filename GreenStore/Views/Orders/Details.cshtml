@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết đơn hàng</h2>
 
 <div>
     <h4>Order</h4>
@@ -95,10 +95,10 @@
 <table class="table table-striped table-hover">
     <tr>
         <th>
-            Item Purchased
+            Sản phẩm đã mua
         </th>
         <th>
-            Quntity
+            Số lượng
         </th>
     </tr>
     @foreach (var item in Model.OrderDetails)
@@ -116,6 +116,6 @@
 </table>
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa đơn hàng", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>

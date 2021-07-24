@@ -1,6 +1,6 @@
 ﻿@model GreenStore.ViewModel.ShoppingCartViewModel
 @{
-    ViewBag.Title = "Giỏ hàng";
+    ViewBag.Title = "Shopping Cart";
 }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@
     });
 </script>
 <h3>
-    Giỏ hàng của bạn:
+    Xem giỏ hàng của bạn:
 </h3>
 
 @{
@@ -39,7 +39,7 @@
     {
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Thông tin đơn hàng</h3>
+                <h3 class="panel-title">Đơn hàng</h3>
             </div>
             <div class="panel-body">
 
@@ -52,7 +52,7 @@
                                 Tên sản phẩm
                             </th>
                             <th>
-                                Giá  (sản phẩm)
+                                Đơn giá
                             </th>
                             <th>
                                 Số lượng
@@ -82,7 +82,7 @@
                     }
                     <tr class="info">
                         <td>
-                            Tổng tiền
+                            Tổng
                         </td>
                         <td></td>
                         <td></td>
@@ -92,7 +92,7 @@
                     </tr>
                 </table>
                 <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddressAndPayment", "Checkout")'">
-                    Xác nhận thanh toán &raquo;
+                    Thanh toán &raquo;
                 </button>
             </div>
         </div>
@@ -101,7 +101,7 @@
     {
         <div>
             <p>
-                Không có sản phẩm nào, hãy thêm sản phẩm vào giở hàng...
+                There are no items in your cart currently. Please shop for something and add items..
             </p>
         </div>
     }

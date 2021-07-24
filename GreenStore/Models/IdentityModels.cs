@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace GreenStore.Models {
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
+        [DisplayName("Điện thoại")]
         public string Phone { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager) {

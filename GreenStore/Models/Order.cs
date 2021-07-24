@@ -60,6 +60,7 @@ namespace GreenStore.Models
 
         [Required(ErrorMessage = "Vui lòng nhập số điênj thoại")]
         [StringLength(24)]
+        [DisplayName("Số điẹn thoại")]
         public string Phone { get; set; }
 
         //[Display(Name = "Experation Date")]
@@ -87,6 +88,7 @@ namespace GreenStore.Models
         public string Email { get; set; }
 
         [ScaffoldColumn(false)]
+        [DisplayName("Tổng tiền")]
         public decimal Total { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
 

@@ -1,11 +1,11 @@
 ﻿@model int
 @{
-    ViewBag.Title = "Thanh toán hoàn tất";
+    ViewBag.Title = "Checkout Complete";
 }
-<h2>ĐẶT HÀNG THÀNH CÔNG</h2>
-<p>Cảm ơn bạn đã đặt hàng! Mã đơn hàng của bạn: @Model</p>
+<h2>Đặt hàng thành công</h2>
+<p>Cảm ơn bạn đã mua sắm! Mã đơn hàng của bạn là : @Model</p>
 <p>
-    Bạn có muốn tìm thêm 
-    @Html.ActionLink("sản phẩm?","Index", "Items")
+    Tìm thêm
+    @Html.ActionLink("sản phẩm","Index", "Home") khác
 </p>
 
